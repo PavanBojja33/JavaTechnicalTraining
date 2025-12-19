@@ -1,20 +1,32 @@
 import java.util.*;
 
 public class StrongNumber {
-    public static boolean isStrong(int n) {
-        int sum=0;
-        for (int i = 1; i < n; i++) {
-            if (n % i == 0)
-                sum+=i;
+    public static int fact(int n) {
+        if (n <= 1)
+            return 1;
+        int pro = 1;
+        while (n > 0) {
+            pro *= n;
+            n--;
         }
-        return sum==n;
+        return pro;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter digit");
         int n = sc.nextInt();
-        boolean b=isStrong(n);
-        System.out.println("Is 'n' is strong number "+b);
+        int sum = 0;
+        int k = n;
+        while (k > 0) {
+            sum += fact(k % 10);
+            k /= 10;
+        }
+        if (sum == n) {
+            System.out.println("Is 'n' is strong number ");
+        } else {
+            System.out.println("Is 'n' is not strong number ");
+
+        }
     }
 }
