@@ -11,5 +11,7 @@ public class StringMethods {
         System.out.println("Character at index 2: "+str.charAt(2));
         System.out.println("Substring from index 2 to 5: "+str.substring(2,5));
         System.out.println("Index of 'a': "+str.indexOf('a'));
+        System.out.println("Replace 'a' with 'o': "+str.replace('a','o')); 
+        
     }    
 }
